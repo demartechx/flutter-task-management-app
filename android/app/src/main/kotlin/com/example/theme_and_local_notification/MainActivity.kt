@@ -1,4 +1,4 @@
-package com.example.theme_and_local_notification
+package com.example.task_management
 
 import io.flutter.embedding.android.FlutterActivity
 
