@@ -1,4 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:task_management/services/notification_services.dart';
+import 'package:task_management/services/theme_services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -6,6 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var notifyHelper;
+
+  @override
+  void initState() {
+    super.initState();
+    notifyHelper = NotifyHelper();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     return AppBar(
       leading: GestureDetector(
         onTap: () {
-          print("tapped");
+          ThemeService().switchTheme();
         },
         child: Icon(
           Icons.nightlight_round,
