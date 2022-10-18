@@ -10,16 +10,23 @@ const Color darHeaderClr = Color(0xFF424242);
 
 class Themes {
   static final light = ThemeData(
+    backgroundColor: Colors.white,
+    shadowColor: Colors.white,
+    cardColor: Colors.white,
     primaryColor: primaryClr,
     brightness: Brightness.light,
-    colorSchemeSeed: primaryClr,
-    // appBarTheme: const AppBarTheme(
-    //   color: primaryClr,
-    // ),
+    // colorSchemeSeed: primaryClr,
+    appBarTheme: const AppBarTheme(
+      color: primaryClr,
+    ),
   );
 
   static final dark = ThemeData(
-    colorSchemeSeed: darkGreyClr,
+    backgroundColor: darkGreyClr,
+    appBarTheme: const AppBarTheme(
+      color: primaryClr,
+    ),
+    // colorSchemeSeed: darkGreyClr,
     // primaryColor: darkGreyClr,
     brightness: Brightness.dark,
   );

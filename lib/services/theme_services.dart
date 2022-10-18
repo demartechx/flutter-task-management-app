@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeService {
   final _box = GetStorage();
@@ -10,6 +11,7 @@ class ThemeService {
 
   bool _loadThemeFromBox() => _box.read(_key) ?? false;
 
+  get them => _loadThemeFromBox();
   ThemeMode get theme => _loadThemeFromBox() ? ThemeMode.dark : ThemeMode.light;
 
   void switchTheme() {
@@ -17,3 +19,4 @@ class ThemeService {
     _saveThemeToBox(!_loadThemeFromBox());
   }
 }
+

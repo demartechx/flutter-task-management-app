@@ -4,12 +4,13 @@ import 'package:get_storage/get_storage.dart';
 import 'package:task_management/services/theme_services.dart';
 import 'package:task_management/ui/home_page.dart';
 import 'package:task_management/ui/theme.dart';
-
+import 'dependencies.dart' as dep;
 //https://www.youtube.com/watch?v=2L8maZUY2hU&list=PL3nPgdhXQtHdtSuguji1FGdWSuogd-glS&index=7
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+  await dep.init();
   runApp(const MyApp());
 }
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return GetMaterialApp( 
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       themeMode: ThemeService().theme,
